@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="309.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calculator.Calculator_Controller">
+   <TextField fx:id="txt_num1" layoutX="26.0" layoutY="68.0" />
+   <Label layoutX="26.0" layoutY="36.0" text="Set First Value" />
+   <Label layoutX="26.0" layoutY="116.0" text="Set Second Value" />
+   <TextField fx:id="txt_num2" layoutX="26.0" layoutY="150.0" />
+   <Label layoutX="26.0" layoutY="225.0" text="Total" />
+   <TextField fx:id="txt_num3" layoutX="26.0" layoutY="259.0" />
+   <Button layoutX="419.0" layoutY="188.0" mnemonicParsing="false" onAction="#Sum_Clicked" prefHeight="25.0" prefWidth="92.0" text="Calculate" />
+   <Button layoutX="419.0" layoutY="234.0" mnemonicParsing="false" onAction="#Clean_Clicked" prefHeight="25.0" prefWidth="92.0" text="Clean" />
+   <Pane layoutX="373.0" layoutY="45.0" prefHeight="95.0" prefWidth="200.0">
+      <RadioButton fx:id="rb_sum" layoutX="14.0" layoutY="22.0" mnemonicParsing="false" selected="true" text="Sum">
+         <toggleGroup>
+            <ToggleGroup fx:id="tg_operations" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="rb_difference" layoutX="93.0" layoutY="22.0" mnemonicParsing="false" text="Difference" toggleGroup="$tg_operations" />
+      <RadioButton fx:id="rb_multiply" layoutX="15.0" layoutY="63.0" mnemonicParsing="false" text="Multiply" toggleGroup="$tg_operations" />
+      <RadioButton fx:id="rb_divide" layoutX="93.0" layoutY="63.0" mnemonicParsing="false" text="Divide" toggleGroup="$tg_operations" />
+   </Pane>
+</AnchorPane>
