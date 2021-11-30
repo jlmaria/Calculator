@@ -18,59 +18,66 @@ public class Calculator_Controller {
     @FXML
     void Sum_Clicked() {
 
-        int n1 = Integer.parseInt(txt_num1.getText());
-        int n2 = Integer.parseInt(txt_num2.getText());
-        int total;
+        if (txt_num1.getText().isEmpty() || txt_num2.getText().isEmpty()) {
 
-        if (rb_sum.isSelected()) {
+            JOptionPane.showMessageDialog(null, "You must insert a value", "Error", JOptionPane.ERROR_MESSAGE);
 
-            total = n1 + n2;
+        } else {
 
-            txt_num3.setText(String.valueOf(total));
+            int n1 = Integer.parseInt(txt_num1.getText());
+            int n2 = Integer.parseInt(txt_num2.getText());
+            int total;
 
-        } else if (rb_difference.isSelected()) {
+            if (rb_sum.isSelected()) {
 
-            total = n1 - n2;
+                total = n1 + n2;
 
-            txt_num3.setText(String.valueOf(total));
+                txt_num3.setText(String.valueOf(total));
 
-        } else if (rb_multiply.isSelected()) {
+            } else if (rb_difference.isSelected()) {
 
-            total = n1 * n2;
+                total = n1 - n2;
 
-            txt_num3.setText(String.valueOf(total));
+                txt_num3.setText(String.valueOf(total));
 
-        } else if (rb_divide.isSelected()) {
+            } else if (rb_multiply.isSelected()) {
 
-            total = n1 / n2;
+                total = n1 * n2;
 
-            txt_num3.setText(String.valueOf((total)));
+                txt_num3.setText(String.valueOf(total));
+
+            } else if (rb_divide.isSelected()) {
+
+                total = n1 / n2;
+
+                txt_num3.setText(String.valueOf((total)));
+
+            }
+
+        }
+    }
+
+        @FXML
+        void Clean_Clicked () {
+
+            txt_num1.setText("");
+            txt_num2.setText("");
+            txt_num3.setText("");
+            txt_num1.requestFocus();
+
+        }
+
+        @FXML
+        public static void Close_Request () {
+
+            int confirm = JOptionPane.showConfirmDialog(null, "Do you want to exit?", "Closing", JOptionPane.OK_CANCEL_OPTION, JOptionPane.WARNING_MESSAGE);
+            if (confirm == JOptionPane.OK_OPTION) {
+
+                JOptionPane.showMessageDialog(null, "Thanks for use the Calculator app", "Exit", JOptionPane.INFORMATION_MESSAGE);
+                Platform.exit();
+
+            }
 
         }
 
     }
-
-    @FXML
-    void Clean_Clicked() {
-
-        txt_num1.setText("");
-        txt_num2.setText("");
-        txt_num3.setText("");
-        txt_num1.requestFocus();
-
-    }
-
-    @FXML
-    public static void Close_Request() {
-
-        int confirm = JOptionPane.showConfirmDialog(null, "Do you want to exit?", "Closing", JOptionPane.OK_CANCEL_OPTION, JOptionPane.WARNING_MESSAGE);
-        if (confirm == JOptionPane.OK_OPTION) {
-
-            JOptionPane.showMessageDialog(null, "Thanks for use the Calculator app", "Exit", JOptionPane.INFORMATION_MESSAGE);
-            Platform.exit();
-
-        }
-
-    }
-
-}
