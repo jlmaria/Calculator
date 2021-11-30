@@ -21,7 +21,6 @@ public class Calculator extends Application{
             stage.setOnCloseRequest(evt -> Calculator_Controller.Close_Request());
             stage.show();
 
-
         }
 
 
