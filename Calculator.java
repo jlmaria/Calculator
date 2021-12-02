@@ -18,7 +18,10 @@ public class Calculator extends Application{
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.setResizable(false);
-            stage.setOnCloseRequest(evt -> Calculator_Controller.Close_Request());
+            stage.setOnCloseRequest(e -> {
+                e.consume();
+                Calculator_Controller.Close_Request();
+            });
             stage.show();
 
         }

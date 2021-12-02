@@ -4,7 +4,8 @@ import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
-import javax.swing.JOptionPane;
+
+import javax.swing.*;
 
 public class Calculator_Controller {
 
@@ -48,29 +49,28 @@ public class Calculator_Controller {
             txt_num3.setText(String.valueOf((total)));
 
         }
-    }
-
-        @FXML
-        void Clean_Clicked () {
-
-            txt_num1.setText("");
-            txt_num2.setText("");
-            txt_num3.setText("");
-            txt_num1.requestFocus();
-
-        }
-
-        @FXML
-        public static void Close_Request () {
-
-            int confirm = JOptionPane.showConfirmDialog(null, "Do you want to exit?", "Closing", JOptionPane.OK_CANCEL_OPTION, JOptionPane.WARNING_MESSAGE);
-            if (confirm == JOptionPane.OK_OPTION) {
-
-                JOptionPane.showMessageDialog(null, "Thanks for use the Calculator app", "Exit", JOptionPane.INFORMATION_MESSAGE);
-                Platform.exit();
-
-            }
-
-        }
 
     }
+
+    @FXML
+    void Clean_Clicked() {
+
+        txt_num1.setText("");
+        txt_num2.setText("");
+        txt_num3.setText("");
+        txt_num1.requestFocus();
+
+    }
+
+    @FXML
+    public static void Close_Request() {
+
+        int confirm = JOptionPane.showConfirmDialog(null, "Do you want to exit?", "Closing", JOptionPane.OK_CANCEL_OPTION, JOptionPane.WARNING_MESSAGE);
+        if (confirm == JOptionPane.OK_OPTION) {
+
+            JOptionPane.showMessageDialog(null, "Thanks for use the Calculator App", "Closing", JOptionPane.INFORMATION_MESSAGE);
+            Platform.exit();
+
+        }
+    }
+}
