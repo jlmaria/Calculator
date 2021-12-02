@@ -15,7 +15,7 @@ public class Calculator_Controller {
     private TextField txt_num1, txt_num2, txt_num3;
 
     @FXML
-    void Sum_Clicked() {
+    void Calculate_Clicked() {
 
         if (txt_num1.getText().isEmpty() || txt_num2.getText().isEmpty()) {
 
