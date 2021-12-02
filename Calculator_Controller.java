@@ -12,7 +12,7 @@ public class Calculator_Controller {
     private RadioButton rb_difference, rb_divide, rb_multiply, rb_sum;
 
     @FXML
-    private TextField txt_num1, txt_num2, txt_num3;
+    private TextField txt_num1, txt_num2, txt_total;
 
     @FXML
     void Calculate_Clicked() {
@@ -45,7 +45,7 @@ public class Calculator_Controller {
 
             }
 
-            txt_num3.setText(String.valueOf((total)));
+            txt_total.setText(String.valueOf((total)));
 
         }
 
@@ -56,7 +56,7 @@ public class Calculator_Controller {
 
         txt_num1.setText("");
         txt_num2.setText("");
-        txt_num3.setText("");
+        txt_total.setText("");
         txt_num1.requestFocus();
 
     }
