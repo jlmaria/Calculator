@@ -25,33 +25,27 @@ public class Calculator_Controller {
 
             int n1 = Integer.parseInt(txt_num1.getText());
             int n2 = Integer.parseInt(txt_num2.getText());
-            int total;
+            int total = 0;
 
             if (rb_sum.isSelected()) {
 
                 total = n1 + n2;
 
-                txt_num3.setText(String.valueOf(total));
-
             } else if (rb_difference.isSelected()) {
 
                 total = n1 - n2;
-
-                txt_num3.setText(String.valueOf(total));
 
             } else if (rb_multiply.isSelected()) {
 
                 total = n1 * n2;
 
-                txt_num3.setText(String.valueOf(total));
-
             } else if (rb_divide.isSelected()) {
 
                 total = n1 / n2;
 
-                txt_num3.setText(String.valueOf((total)));
-
             }
+
+            txt_num3.setText(String.valueOf((total)));
 
         }
     }
