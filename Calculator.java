@@ -24,7 +24,7 @@ public class Calculator extends Application{
             stage.show();
 
         }
-        
+
     public static void run(String[] args) {
             launch(args);
 

@@ -14,7 +14,7 @@
    <Label layoutX="26.0" layoutY="116.0" text="Set Second Value" />
    <TextField fx:id="txt_num2" layoutX="26.0" layoutY="150.0" />
    <Label layoutX="26.0" layoutY="225.0" text="Total" />
-   <TextField fx:id="txt_num3" layoutX="26.0" layoutY="259.0" />
+   <TextField fx:id="txt_num3" editable="false" layoutX="26.0" layoutY="259.0" />
    <Button layoutX="419.0" layoutY="188.0" mnemonicParsing="false" onAction="#Calculate_Clicked" prefHeight="25.0" prefWidth="92.0" text="Calculate" />
    <Button layoutX="419.0" layoutY="234.0" mnemonicParsing="false" onAction="#Clean_Clicked" prefHeight="25.0" prefWidth="92.0" text="Clean" />
    <Pane layoutX="373.0" layoutY="45.0" prefHeight="95.0" prefWidth="200.0">
