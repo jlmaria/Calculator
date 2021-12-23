@@ -6,24 +6,115 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="309.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calculator.Calculator_Controller">
-   <TextField fx:id="txt_num1" layoutX="26.0" layoutY="68.0" />
-   <Label layoutX="26.0" layoutY="36.0" text="Set First Value" />
-   <Label layoutX="26.0" layoutY="116.0" text="Set Second Value" />
-   <TextField fx:id="txt_num2" layoutX="26.0" layoutY="150.0" />
-   <Label layoutX="26.0" layoutY="225.0" text="Total" />
-   <TextField fx:id="txt_total" editable="false" layoutX="26.0" layoutY="259.0" />
-   <Button layoutX="419.0" layoutY="188.0" mnemonicParsing="false" onAction="#Calculate_Clicked" prefHeight="25.0" prefWidth="92.0" text="Calculate" />
-   <Button layoutX="419.0" layoutY="234.0" mnemonicParsing="false" onAction="#Clean_Clicked" prefHeight="25.0" prefWidth="92.0" text="Clean" />
-   <Pane layoutX="373.0" layoutY="45.0" prefHeight="95.0" prefWidth="200.0">
-      <RadioButton fx:id="rb_sum" layoutX="14.0" layoutY="22.0" mnemonicParsing="false" selected="true" text="Sum">
-         <toggleGroup>
-            <ToggleGroup fx:id="tg_operations" />
-         </toggleGroup></RadioButton>
-      <RadioButton fx:id="rb_difference" layoutX="93.0" layoutY="22.0" mnemonicParsing="false" text="Difference" toggleGroup="$tg_operations" />
-      <RadioButton fx:id="rb_multiply" layoutX="15.0" layoutY="63.0" mnemonicParsing="false" text="Multiply" toggleGroup="$tg_operations" />
-      <RadioButton fx:id="rb_divide" layoutX="93.0" layoutY="63.0" mnemonicParsing="false" text="Divide" toggleGroup="$tg_operations" />
-   </Pane>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="322.0" prefWidth="243.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calculator.Calculator_Controller">
+   <TextField fx:id="txt_value" alignment="CENTER_RIGHT" layoutX="3.0" layoutY="37.0" prefHeight="45.0" prefWidth="237.0">
+      <font>
+         <Font name="Tahoma Bold" size="23.0" />
+      </font></TextField>
+   <RadioButton fx:id="rb_on" disable="true" layoutX="3.0" layoutY="94.0" mnemonicParsing="false" onAction="#press_on" text="ON">
+      <font>
+         <Font name="Tahoma Bold" size="11.0" />
+      </font>
+      <toggleGroup>
+         <ToggleGroup fx:id="on_off" />
+      </toggleGroup>
+   </RadioButton>
+   <RadioButton fx:id="rb_off" layoutX="3.0" layoutY="124.0" mnemonicParsing="false" onAction="#press_off" text="OFF" toggleGroup="$on_off">
+      <font>
+         <Font name="Tahoma Bold" size="11.0" />
+      </font>
+   </RadioButton>
+   <Button fx:id="btn_backspace" layoutX="58.0" layoutY="97.0" mnemonicParsing="false" onAction="#press_backspace" prefHeight="32.0" prefWidth="47.0" text="&lt;--">
+      <font>
+         <Font name="Tahoma Bold" size="14.0" />
+      </font>
+   </Button>
+   <Button fx:id="btn_cancel" layoutX="112.0" layoutY="97.0" mnemonicParsing="false" onAction="#press_cancel" prefHeight="32.0" prefWidth="47.0" text="C">
+      <font>
+         <Font name="Tahoma Bold" size="14.0" />
+      </font>
+   </Button>
+   <Button fx:id="btn_plus" layoutX="183.0" layoutY="97.0" mnemonicParsing="false" onAction="#press_plus" prefHeight="32.0" prefWidth="47.0" text="+">
+      <font>
+         <Font name="Tahoma Bold" size="14.0" />
+      </font>
+   </Button>
+   <Button fx:id="btn_seven" layoutX="14.0" layoutY="149.0" mnemonicParsing="false" onAction="#press_seven" prefHeight="32.0" prefWidth="47.0" text="7">
+      <font>
+         <Font name="Tahoma Bold" size="14.0" />
+      </font>
+   </Button>
+   <Button fx:id="btn_eight" layoutX="71.0" layoutY="149.0" mnemonicParsing="false" onAction="#press_eight" prefHeight="32.0" prefWidth="47.0" text="8">
+      <font>
+         <Font name="Tahoma Bold" size="14.0" />
+      </font>
+   </Button>
+   <Button fx:id="btn_nine" layoutX="126.0" layoutY="149.0" mnemonicParsing="false" onAction="#press_nine" prefHeight="32.0" prefWidth="47.0" text="9">
+      <font>
+         <Font name="Tahoma Bold" size="14.0" />
+      </font>
+   </Button>
+   <Button fx:id="btn_minus" layoutX="183.0" layoutY="149.0" mnemonicParsing="false" onAction="#press_minus" prefHeight="32.0" prefWidth="47.0" text="-">
+      <font>
+         <Font name="Tahoma Bold" size="14.0" />
+      </font>
+   </Button>
+   <Button fx:id="btn_four" layoutX="14.0" layoutY="192.0" mnemonicParsing="false" onAction="#press_four" prefHeight="32.0" prefWidth="47.0" text="4">
+      <font>
+         <Font name="Tahoma Bold" size="14.0" />
+      </font>
+   </Button>
+   <Button fx:id="btn_five" layoutX="71.0" layoutY="192.0" mnemonicParsing="false" onAction="#press_five" prefHeight="32.0" prefWidth="47.0" text="5">
+      <font>
+         <Font name="Tahoma Bold" size="14.0" />
+      </font>
+   </Button>
+   <Button fx:id="btn_six" layoutX="126.0" layoutY="192.0" mnemonicParsing="false" onAction="#press_six" prefHeight="32.0" prefWidth="47.0" text="6">
+      <font>
+         <Font name="Tahoma Bold" size="14.0" />
+      </font>
+   </Button>
+   <Button fx:id="btn_for" layoutX="183.0" layoutY="192.0" mnemonicParsing="false" onAction="#press_for" prefHeight="32.0" prefWidth="47.0" text="x">
+      <font>
+         <Font name="Tahoma Bold" size="14.0" />
+      </font>
+   </Button>
+   <Button fx:id="btn_one" layoutX="14.0" layoutY="233.0" mnemonicParsing="false" onAction="#press_one" prefHeight="32.0" prefWidth="47.0" text="1">
+      <font>
+         <Font name="Tahoma Bold" size="14.0" />
+      </font>
+   </Button>
+   <Button fx:id="btn_two" layoutX="71.0" layoutY="233.0" mnemonicParsing="false" onAction="#press_two" prefHeight="32.0" prefWidth="47.0" text="2">
+      <font>
+         <Font name="Tahoma Bold" size="14.0" />
+      </font>
+   </Button>
+   <Button fx:id="btn_three" layoutX="126.0" layoutY="233.0" mnemonicParsing="false" onAction="#press_three" prefHeight="32.0" prefWidth="47.0" text="3">
+      <font>
+         <Font name="Tahoma Bold" size="14.0" />
+      </font>
+   </Button>
+   <Button fx:id="btn_divide" layoutX="183.0" layoutY="233.0" mnemonicParsing="false" onAction="#press_divide" prefHeight="32.0" prefWidth="47.0" text="/">
+      <font>
+         <Font name="Tahoma Bold" size="14.0" />
+      </font>
+   </Button>
+   <Button fx:id="btn_zero" layoutX="14.0" layoutY="274.0" mnemonicParsing="false" onAction="#press_zero" prefHeight="32.0" prefWidth="47.0" text="0">
+      <font>
+         <Font name="Tahoma Bold" size="14.0" />
+      </font>
+   </Button>
+   <Button fx:id="btn_point" layoutX="71.0" layoutY="274.0" mnemonicParsing="false" onAction="#press_point" prefHeight="32.0" prefWidth="47.0" text=".">
+      <font>
+         <Font name="Tahoma Bold" size="14.0" />
+      </font>
+   </Button>
+   <Button fx:id="btn_equals" layoutX="128.0" layoutY="274.0" mnemonicParsing="false" onAction="#press_equals" prefHeight="32.0" prefWidth="102.0" text="=">
+      <font>
+         <Font name="Tahoma Bold" size="14.0" />
+      </font>
+   </Button>
+   <Label fx:id="lbl_calculate" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="182.0" layoutY="14.0" prefHeight="17.0" prefWidth="50.0" textFill="#ff3366" />
 </AnchorPane>
