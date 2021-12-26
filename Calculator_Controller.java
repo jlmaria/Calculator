@@ -3,7 +3,9 @@ package calculator;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javax.swing.JOptionPane;
+import javafx.scene.input.*;
+
+import javax.swing.*;
 
 public class Calculator_Controller {
 
@@ -80,6 +82,38 @@ public class Calculator_Controller {
     public ToggleGroup on_off;
 
     @FXML
+    void keyboard(KeyEvent event) {
+
+        switch (event.getCode()) {
+
+            case NUMPAD1 -> press_one();
+
+            case NUMPAD2 -> press_two();
+
+            case NUMPAD3 -> press_three();
+
+            case NUMPAD4 -> press_four();
+
+            case NUMPAD5 -> press_five();
+
+            case NUMPAD6 -> press_six();
+
+            case NUMPAD7 ->  press_seven();
+
+            case NUMPAD8 -> press_eight();
+
+            case NUMPAD9 -> press_nine();
+
+            case PLUS -> press_plus();
+
+            case ENTER -> press_equals();
+
+        }
+
+
+    }
+
+    @FXML
     void press_backspace() {
 
         int length = txt_value.getText().length();
@@ -101,6 +135,7 @@ public class Calculator_Controller {
     void press_cancel() {
 
         txt_value.setText("");
+        txt_value.requestFocus();
 
     }
 
@@ -304,7 +339,7 @@ public class Calculator_Controller {
     }
 
     @FXML
-    public static void Close_Request() {
+    void close_Request() {
 
         int confirm = JOptionPane.showConfirmDialog(null, "Do you want to exit?", "Closing", JOptionPane.OK_CANCEL_OPTION, JOptionPane.WARNING_MESSAGE);
         if (confirm == JOptionPane.OK_OPTION) {
