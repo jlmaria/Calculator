@@ -13,17 +13,9 @@ public class Calculator extends Application {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("calculator.fxml"));
         Parent root = loader.load();
-        //Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("calculator.fxml")));
         stage.setTitle("Calculator");
         Scene scene = new Scene(root);
         stage.setScene(scene);
-        scene.setOnKeyPressed(e -> {
-
-            Calculator_Controller press = new Calculator_Controller();
-            press.keyboard(e);
-
-        });
-
         stage.setResizable(false);
         stage.setOnCloseRequest(e ->
 

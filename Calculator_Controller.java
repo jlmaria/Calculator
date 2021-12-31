@@ -3,7 +3,6 @@ package calculator;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.input.*;
 
 import javax.swing.*;
 
@@ -13,105 +12,22 @@ public class Calculator_Controller {
     int calculate;
 
     @FXML
-    private Button btn_backspace;
+    private Button btn_backspace, btn_cancel, btn_divide, btn_eight, btn_equals, btn_five, btn_for, btn_four, btn_minus;
 
     @FXML
-    private Button btn_cancel;
-
-    @FXML
-    private Button btn_divide;
-
-    @FXML
-    private Button btn_eight;
-
-    @FXML
-    private Button btn_equals;
-
-    @FXML
-    private Button btn_five;
-
-    @FXML
-    private Button btn_for;
-
-    @FXML
-    private Button btn_four;
-
-    @FXML
-    private Button btn_minus;
-
-    @FXML
-    private Button btn_nine;
-
-    @FXML
-    private Button btn_one;
-
-    @FXML
-    private Button btn_plus;
-
-    @FXML
-    private Button btn_point;
-
-    @FXML
-    private Button btn_seven;
-
-    @FXML
-    private Button btn_six;
-
-    @FXML
-    private Button btn_three;
-
-    @FXML
-    private Button btn_two;
-
-    @FXML
-    private Button btn_zero;
+    private Button btn_nine, btn_one, btn_plus, btn_point, btn_seven, btn_six, btn_three, btn_two, btn_zero;
 
     @FXML
     private Label lbl_calculate;
 
     @FXML
-    private RadioButton rb_off;
-
-    @FXML
-    private RadioButton rb_on;
+    private RadioButton rb_off, rb_on;
 
     @FXML
     private TextField txt_value;
 
     @FXML
     public ToggleGroup on_off;
-
-    @FXML
-    void keyboard(KeyEvent event) {
-
-        switch (event.getCode()) {
-
-            case NUMPAD1 -> press_one();
-
-            case NUMPAD2 -> press_two();
-
-            case NUMPAD3 -> press_three();
-
-            case NUMPAD4 -> press_four();
-
-            case NUMPAD5 -> press_five();
-
-            case NUMPAD6 -> press_six();
-
-            case NUMPAD7 ->  press_seven();
-
-            case NUMPAD8 -> press_eight();
-
-            case NUMPAD9 -> press_nine();
-
-            case PLUS -> press_plus();
-
-            case ENTER -> press_equals();
-
-        }
-
-
-    }
 
     @FXML
     void press_backspace() {
@@ -146,6 +62,7 @@ public class Calculator_Controller {
         calculate = 4;
         txt_value.setText("");
         lbl_calculate.setText(num + "/");
+        txt_value.requestFocus();
 
     }
 
@@ -198,6 +115,7 @@ public class Calculator_Controller {
         calculate = 3;
         txt_value.setText("");
         lbl_calculate.setText(num + "*");
+        txt_value.requestFocus();
 
     }
 
@@ -215,6 +133,7 @@ public class Calculator_Controller {
         calculate = 2;
         txt_value.setText("");
         lbl_calculate.setText(num + "-");
+        txt_value.requestFocus();
 
     }
 
@@ -293,6 +212,7 @@ public class Calculator_Controller {
         calculate = 1;
         txt_value.setText("");
         lbl_calculate.setText(num + "+");
+        txt_value.requestFocus();
 
     }
 
@@ -341,10 +261,14 @@ public class Calculator_Controller {
     @FXML
     void close_Request() {
 
-        int confirm = JOptionPane.showConfirmDialog(null, "Do you want to exit?", "Closing", JOptionPane.OK_CANCEL_OPTION, JOptionPane.WARNING_MESSAGE);
+        int confirm = JOptionPane.showConfirmDialog(null, "Do you want to exit?", "Closing",
+                JOptionPane.OK_CANCEL_OPTION, JOptionPane.WARNING_MESSAGE);
+
         if (confirm == JOptionPane.OK_OPTION) {
 
-            JOptionPane.showMessageDialog(null, "Thanks for use the Calculator App", "Closing", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Thanks for use the Calculator App",
+                    "Closing", JOptionPane.INFORMATION_MESSAGE);
+
             Platform.exit();
 
         }
