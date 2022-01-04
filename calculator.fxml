@@ -36,7 +36,7 @@
          <Font name="Tahoma Bold" size="14.0" />
       </font>
    </Button>
-   <Button fx:id="btn_plus" layoutX="183.0" layoutY="97.0" mnemonicParsing="false" onAction="#press_plus" onKeyPressed="#press_plus" prefHeight="32.0" prefWidth="47.0" text="+">
+   <Button fx:id="btn_plus" layoutX="183.0" layoutY="97.0" mnemonicParsing="false" onAction="#press_plus" prefHeight="32.0" prefWidth="47.0" text="+">
       <font>
          <Font name="Tahoma Bold" size="14.0" />
       </font>
@@ -56,7 +56,7 @@
          <Font name="Tahoma Bold" size="14.0" />
       </font>
    </Button>
-   <Button fx:id="btn_minus" layoutX="183.0" layoutY="149.0" mnemonicParsing="false" onAction="#press_minus" onKeyPressed="#press_minus" prefHeight="32.0" prefWidth="47.0" text="-">
+   <Button fx:id="btn_minus" layoutX="183.0" layoutY="149.0" mnemonicParsing="false" onAction="#press_minus" prefHeight="32.0" prefWidth="47.0" text="-">
       <font>
          <Font name="Tahoma Bold" size="14.0" />
       </font>
@@ -76,7 +76,7 @@
          <Font name="Tahoma Bold" size="14.0" />
       </font>
    </Button>
-   <Button fx:id="btn_for" layoutX="183.0" layoutY="192.0" mnemonicParsing="false" onAction="#press_for" onKeyPressed="#press_for" prefHeight="32.0" prefWidth="47.0" text="x">
+   <Button fx:id="btn_for" layoutX="183.0" layoutY="192.0" mnemonicParsing="false" onAction="#press_for" prefHeight="32.0" prefWidth="47.0" text="x">
       <font>
          <Font name="Tahoma Bold" size="14.0" />
       </font>
@@ -96,7 +96,7 @@
          <Font name="Tahoma Bold" size="14.0" />
       </font>
    </Button>
-   <Button fx:id="btn_divide" layoutX="183.0" layoutY="233.0" mnemonicParsing="false" onAction="#press_divide" onKeyPressed="#press_divide" prefHeight="32.0" prefWidth="47.0" text="/">
+   <Button fx:id="btn_divide" layoutX="183.0" layoutY="233.0" mnemonicParsing="false" onAction="#press_divide" prefHeight="32.0" prefWidth="47.0" text="/">
       <font>
          <Font name="Tahoma Bold" size="14.0" />
       </font>
@@ -111,7 +111,7 @@
          <Font name="Tahoma Bold" size="14.0" />
       </font>
    </Button>
-   <Button fx:id="btn_equals" layoutX="128.0" layoutY="274.0" mnemonicParsing="false" onAction="#press_equals" onKeyPressed="#press_equals" prefHeight="32.0" prefWidth="102.0" text="=">
+   <Button fx:id="btn_equals" layoutX="128.0" layoutY="274.0" mnemonicParsing="false" onAction="#press_equals" prefHeight="32.0" prefWidth="102.0" text="=">
       <font>
          <Font name="Tahoma Bold" size="14.0" />
       </font>

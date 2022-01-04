@@ -148,6 +148,7 @@ public class Calculator_Controller {
     void press_off() {
 
         txt_value.setDisable(true);
+        txt_value.setEditable(false);
         btn_backspace.setDisable(true);
         btn_cancel.setDisable(true);
         btn_divide.setDisable(true);
@@ -175,6 +176,8 @@ public class Calculator_Controller {
     void press_on() {
 
         txt_value.setDisable(false);
+        txt_value.setEditable(true);
+        txt_value.requestFocus();
         btn_backspace.setDisable(false);
         btn_cancel.setDisable(false);
         btn_divide.setDisable(false);
@@ -206,7 +209,7 @@ public class Calculator_Controller {
     }
 
     @FXML
-    void press_plus() {
+     void press_plus() {
 
         num = Double.parseDouble(txt_value.getText());
         calculate = 1;
