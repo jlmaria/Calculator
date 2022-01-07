@@ -3,6 +3,7 @@ package calculator;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyEvent;
 
 import javax.swing.*;
 
@@ -12,10 +13,10 @@ public class Calculator_Controller {
     int calculate;
 
     @FXML
-    private Button btn_backspace, btn_cancel, btn_divide, btn_eight, btn_equals, btn_five, btn_for, btn_four, btn_minus;
+    private Button btn_backspace, btn_cancel, btn_divide, btn_eight, btn_equals, btn_five, btn_four, btn_minus;
 
     @FXML
-    private Button btn_nine, btn_one, btn_plus, btn_point, btn_seven, btn_six, btn_three, btn_two, btn_zero;
+    private Button btn_multiply, btn_nine, btn_one, btn_plus, btn_point, btn_seven, btn_six, btn_three, btn_two, btn_zero;
 
     @FXML
     private Label lbl_calculate;
@@ -28,6 +29,21 @@ public class Calculator_Controller {
 
     @FXML
     public ToggleGroup on_off;
+
+    @FXML
+    void keyboard(KeyEvent event) {
+
+        switch(event.getCode()) {
+
+            case PLUS -> press_plus();
+            case MINUS -> press_minus();
+            case MULTIPLY -> press_multiply();
+            case DIVIDE -> press_divide();
+            case ENTER -> press_equals();
+
+        }
+
+    }
 
     @FXML
     void press_backspace() {
@@ -51,6 +67,7 @@ public class Calculator_Controller {
     void press_cancel() {
 
         txt_value.setText("");
+        lbl_calculate.setText("");
         txt_value.requestFocus();
 
     }
@@ -109,7 +126,7 @@ public class Calculator_Controller {
     }
 
     @FXML
-    void press_for() {
+    void press_multiply() {
 
         num = Double.parseDouble(txt_value.getText());
         calculate = 3;
@@ -155,7 +172,7 @@ public class Calculator_Controller {
         btn_eight.setDisable(true);
         btn_equals.setDisable(true);
         btn_five.setDisable(true);
-        btn_for.setDisable(true);
+        btn_multiply.setDisable(true);
         btn_four.setDisable(true);
         btn_minus.setDisable(true);
         btn_nine.setDisable(true);
@@ -184,7 +201,7 @@ public class Calculator_Controller {
         btn_eight.setDisable(false);
         btn_equals.setDisable(false);
         btn_five.setDisable(false);
-        btn_for.setDisable(false);
+        btn_multiply.setDisable(false);
         btn_four.setDisable(false);
         btn_minus.setDisable(false);
         btn_nine.setDisable(false);

@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="322.0" prefWidth="243.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calculator.Calculator_Controller">
-   <TextField fx:id="txt_value" alignment="CENTER_RIGHT" layoutX="3.0" layoutY="37.0" prefHeight="45.0" prefWidth="237.0">
+   <TextField fx:id="txt_value" alignment="CENTER_RIGHT" layoutX="3.0" layoutY="37.0" onKeyPressed="#keyboard" prefHeight="45.0" prefWidth="237.0">
       <font>
          <Font name="Tahoma Bold" size="23.0" />
       </font></TextField>
@@ -76,7 +76,7 @@
          <Font name="Tahoma Bold" size="14.0" />
       </font>
    </Button>
-   <Button fx:id="btn_for" layoutX="183.0" layoutY="192.0" mnemonicParsing="false" onAction="#press_for" prefHeight="32.0" prefWidth="47.0" text="x">
+   <Button fx:id="btn_multiply" layoutX="183.0" layoutY="192.0" mnemonicParsing="false" onAction="#press_multiply" prefHeight="32.0" prefWidth="47.0" text="x">
       <font>
          <Font name="Tahoma Bold" size="14.0" />
       </font>
