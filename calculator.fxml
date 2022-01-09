@@ -36,7 +36,7 @@
          <Font name="Tahoma Bold" size="14.0" />
       </font>
    </Button>
-   <Button fx:id="btn_plus" layoutX="183.0" layoutY="97.0" mnemonicParsing="false" onAction="#press_plus" prefHeight="32.0" prefWidth="47.0" text="+">
+   <Button fx:id="btn_add" layoutX="183.0" layoutY="97.0" mnemonicParsing="false" onAction="#press_add" prefHeight="32.0" prefWidth="47.0" text="+">
       <font>
          <Font name="Tahoma Bold" size="14.0" />
       </font>
@@ -56,7 +56,7 @@
          <Font name="Tahoma Bold" size="14.0" />
       </font>
    </Button>
-   <Button fx:id="btn_minus" layoutX="183.0" layoutY="149.0" mnemonicParsing="false" onAction="#press_minus" prefHeight="32.0" prefWidth="47.0" text="-">
+   <Button fx:id="btn_subtract" layoutX="183.0" layoutY="149.0" mnemonicParsing="false" onAction="#press_subtract" prefHeight="32.0" prefWidth="47.0" text="-">
       <font>
          <Font name="Tahoma Bold" size="14.0" />
       </font>

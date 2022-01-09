@@ -13,10 +13,10 @@ public class Calculator_Controller {
     int calculate;
 
     @FXML
-    private Button btn_backspace, btn_cancel, btn_divide, btn_eight, btn_equals, btn_five, btn_four, btn_minus;
+    private Button btn_add, btn_backspace, btn_cancel, btn_divide, btn_eight, btn_equals, btn_five, btn_four;
 
     @FXML
-    private Button btn_multiply, btn_nine, btn_one, btn_plus, btn_point, btn_seven, btn_six, btn_three, btn_two, btn_zero;
+    private Button btn_multiply, btn_nine, btn_one, btn_point, btn_seven, btn_six, btn_subtract, btn_three, btn_two, btn_zero;
 
     @FXML
     private Label lbl_calculate;
@@ -29,21 +29,6 @@ public class Calculator_Controller {
 
     @FXML
     public ToggleGroup on_off;
-
-    @FXML
-    void keyboard(KeyEvent event) {
-
-        switch(event.getCode()) {
-
-            case PLUS -> press_plus();
-            case MINUS -> press_minus();
-            case MULTIPLY -> press_multiply();
-            case DIVIDE -> press_divide();
-            case ENTER -> press_equals();
-
-        }
-
-    }
 
     @FXML
     void press_backspace() {
@@ -144,7 +129,7 @@ public class Calculator_Controller {
     }
 
     @FXML
-    void press_minus() {
+    void press_subtract() {
 
         num = Double.parseDouble(txt_value.getText());
         calculate = 2;
@@ -174,11 +159,11 @@ public class Calculator_Controller {
         btn_five.setDisable(true);
         btn_multiply.setDisable(true);
         btn_four.setDisable(true);
-        btn_minus.setDisable(true);
+        btn_subtract.setDisable(true);
         btn_nine.setDisable(true);
         btn_one.setDisable(true);
         btn_point.setDisable(true);
-        btn_plus.setDisable(true);
+        btn_add.setDisable(true);
         btn_seven.setDisable(true);
         btn_six.setDisable(true);
         btn_three.setDisable(true);
@@ -203,11 +188,11 @@ public class Calculator_Controller {
         btn_five.setDisable(false);
         btn_multiply.setDisable(false);
         btn_four.setDisable(false);
-        btn_minus.setDisable(false);
+        btn_subtract.setDisable(false);
         btn_nine.setDisable(false);
         btn_one.setDisable(false);
         btn_point.setDisable(false);
-        btn_plus.setDisable(false);
+        btn_add.setDisable(false);
         btn_seven.setDisable(false);
         btn_six.setDisable(false);
         btn_three.setDisable(false);
@@ -226,7 +211,7 @@ public class Calculator_Controller {
     }
 
     @FXML
-     void press_plus() {
+     void press_add() {
 
         num = Double.parseDouble(txt_value.getText());
         calculate = 1;
@@ -275,6 +260,21 @@ public class Calculator_Controller {
     void press_zero() {
 
         txt_value.setText(txt_value.getText() + "0");
+
+    }
+
+    @FXML
+    void keyboard(KeyEvent event) {
+
+        switch(event.getCode()) {
+
+            case ADD -> press_add();
+            case SUBTRACT -> press_subtract();
+            case MULTIPLY -> press_multiply();
+            case DIVIDE -> press_divide();
+            case ENTER -> press_equals();
+
+        }
 
     }
 
