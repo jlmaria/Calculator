@@ -25,6 +25,7 @@ public class Calculator extends Application {
             control.close_Request();
 
         });
+
         stage.show();
 
     }

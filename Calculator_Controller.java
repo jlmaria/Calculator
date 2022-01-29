@@ -6,6 +6,8 @@ import javafx.scene.control.*;
 import javafx.scene.input.KeyEvent;
 
 import javax.swing.*;
+import java.text.DecimalFormat;
+import java.text.ParsePosition;
 
 public class Calculator_Controller {
 
@@ -275,6 +277,28 @@ public class Calculator_Controller {
             case ENTER -> press_equals();
 
         }
+
+        DecimalFormat format = new DecimalFormat( "#.0" );
+
+        txt_value.setTextFormatter( new TextFormatter<>(e ->
+        {
+            if (e.getControlNewText().isEmpty())
+            {
+                return e;
+            }
+
+            ParsePosition parsePosition = new ParsePosition( 0 );
+            Object object = format.parse(e.getControlNewText(), parsePosition);
+
+            if (object == null || parsePosition.getIndex() <e.getControlNewText().length())
+            {
+                return null;
+            }
+            else
+            {
+                return e;
+            }
+        }));
 
     }
 
