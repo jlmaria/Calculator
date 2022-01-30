@@ -18,7 +18,10 @@ public class Calculator_Controller {
     private Button btn_add, btn_backspace, btn_cancel, btn_divide, btn_eight, btn_equals, btn_five, btn_four;
 
     @FXML
-    private Button btn_multiply, btn_nine, btn_one, btn_point, btn_seven, btn_six, btn_subtract, btn_three, btn_two, btn_zero;
+    private Button btn_multiply, btn_nine, btn_one, btn_point, btn_posNeg, btn_seven, btn_six, btn_subtract, btn_three;
+
+    @FXML
+    private Button btn_two, btn_zero;
 
     @FXML
     private Label lbl_calculate;
@@ -165,6 +168,7 @@ public class Calculator_Controller {
         btn_nine.setDisable(true);
         btn_one.setDisable(true);
         btn_point.setDisable(true);
+        btn_posNeg.setDisable(true);
         btn_add.setDisable(true);
         btn_seven.setDisable(true);
         btn_six.setDisable(true);
@@ -194,6 +198,7 @@ public class Calculator_Controller {
         btn_nine.setDisable(false);
         btn_one.setDisable(false);
         btn_point.setDisable(false);
+        btn_posNeg.setDisable(false);
         btn_add.setDisable(false);
         btn_seven.setDisable(false);
         btn_six.setDisable(false);
@@ -213,7 +218,7 @@ public class Calculator_Controller {
     }
 
     @FXML
-     void press_add() {
+    void press_add() {
 
         num = Double.parseDouble(txt_value.getText());
         calculate = 1;
@@ -227,6 +232,16 @@ public class Calculator_Controller {
     void press_point() {
 
         txt_value.setText(txt_value.getText() + ".");
+
+    }
+
+    @FXML
+    void press_posNeg() {
+
+        num = Double.parseDouble(txt_value.getText());
+
+        double negative_result = num * -1;
+        txt_value.setText(negative_result + "");
 
     }
 
@@ -268,7 +283,7 @@ public class Calculator_Controller {
     @FXML
     void keyboard(KeyEvent event) {
 
-        switch(event.getCode()) {
+        switch (event.getCode()) {
 
             case ADD -> press_add();
             case SUBTRACT -> press_subtract();
@@ -278,24 +293,20 @@ public class Calculator_Controller {
 
         }
 
-        DecimalFormat format = new DecimalFormat( "#.0" );
+        DecimalFormat format = new DecimalFormat("#.0");
 
-        txt_value.setTextFormatter( new TextFormatter<>(e ->
+        txt_value.setTextFormatter(new TextFormatter<>(e ->
         {
-            if (e.getControlNewText().isEmpty())
-            {
+            if (e.getControlNewText().isEmpty()) {
                 return e;
             }
 
-            ParsePosition parsePosition = new ParsePosition( 0 );
+            ParsePosition parsePosition = new ParsePosition(0);
             Object object = format.parse(e.getControlNewText(), parsePosition);
 
-            if (object == null || parsePosition.getIndex() <e.getControlNewText().length())
-            {
+            if (object == null || parsePosition.getIndex() < e.getControlNewText().length()) {
                 return null;
-            }
-            else
-            {
+            } else {
                 return e;
             }
         }));
@@ -317,4 +328,5 @@ public class Calculator_Controller {
 
         }
     }
+
 }
