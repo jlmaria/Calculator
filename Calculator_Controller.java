@@ -242,6 +242,7 @@ public class Calculator_Controller {
 
         double negative_result = num * -1;
         txt_value.setText(negative_result + "");
+        txt_value.requestFocus();
 
     }
 
